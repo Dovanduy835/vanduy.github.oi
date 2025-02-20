@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Nanida.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0"></script>
+    <section class="intro">
+        <h1>Chào mừng đến với Airbnb FLY</h1>
+        <p>Khám phá hàng ngàn chỗ ở tuyệt đẹp trên khắp Việt Nam với mức giá hợp lý. Hãy đặt ngay để có trải nghiệm tuyệt vời!</p>
+    </section>
+    <header>
+        <div class="logo">AIRBIN</div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder=" Bạn muốn đi đâu?">
+            <button class="search-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Địa điểm">
+            <input type="text" placeholder="Nhận phòng">
+            <input type="text" placeholder="Trả phòng">
+            <input type="text" placeholder="Khách">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="user-options">
+            <span>Cho thuê chỗ ở qua Airbnb</span>
+            <span></span>
+            <span>🌐</span>
+            <div class="menu-container">
+                <label for="menu-toggle" class="menu-icon">☰</label>
+                <input type="checkbox" id="menu-toggle">
+                <div class="menu">
+                    <a href="login.html" target="_blank">Đăng Nhập</a>
+                    </div>
+        </div>
+    </header>
+    <div class="filters">
+        <label for="price-filter">💰 Giá:</label>
+        <select id="price-filter">
+            <option value="all">Tất cả</option>
+            <option value="low">Dưới 300.000 VND</option>
+            <option value="mid">300.000 - 500.000 VND</option>
+            <option value="high">Trên 500.000 VND</option>
+        </select>
+    
+        <label for="location-filter">📍 Địa điểm:</label>
+        <select id="location-filter">
+            <option value="all">Tất cả</option>
+            <option value="hanoi">Hà Nội</option>
+            <option value="hcm">TP Hồ Chí Minh</option>
+            <option value="dalat">Đà Lạt</option>
+        </select>
+    
+        <button class="apply-filter-btn">🔍 Áp dụng</button>
+    </div>
+    
+    <div class="categories">
+        <div class="category" id="hochiminh">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng.jpg" alt="Phòng">
+            <div class="category-content">
+                <p>Chủ nhà: Nguyễn Bình Tân, kinh doanh điện thoại</p>
+                <p>Địa điểm: Thành Phố Hồ Chí Minh</p>
+                <p>Ngày: 19/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.8) - 300 đánh giá
+                </div class="consle">
+                <p class="price">Giá tiền: 200.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="dalat">
+            <div class="favorite-badge">
+            Được khách yêu thích ❤️
+        </div>
+            <img src="phòng1.jpg" alt="Khung Cảnh">
+            <div class="category-content">
+                <p>Chủ nhà: Đỗ Văn Nghĩa, kinh doanh Vàng</p>
+                <p>Địa điểm: Đà Lạt</p>
+                <p>Ngày: 23/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.5) - 120 đánh giá
+                </div>
+                <p class="price">Giá tiền: 300.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="hanoi">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng2.jpg" alt="Nông Thôn">
+            <div class="category-content">
+                <p>Chủ nhà: Trần Đại Nghĩa, kinh doanh kim cương</p>
+                <p>Địa điểm: Hà Nội</p>
+                <p>Ngày: 19/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.6) - 140 đánh giá
+                </div>
+                <p class="price">Giá tiền: 400.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="hochiminh">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng3.jpg" alt="Hồ Bơi">
+            <div class="category-content">
+                <p>Chủ nhà: Phạm Tuấn Tài, kinh doanh phân bón</p>
+                <p>Địa điểm: Thành Phố Hồ Chí Minh</p>
+                <p>Ngày: 13/2/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.6) - 200 đánh giá
+                </div>
+                <p class="price">Giá tiền: 260.000 VND/1 ngày</p>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="category" id="dalat">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng4.jpg" alt="Hình ảnh 1">
+            <div class="category-content">
+                <p>Chủ nhà: Lưu Bích Trang, kinh doanh hoa</p>
+                <p>Địa điểm: Đà Lạt</p>
+                <p>Ngày: 12/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.6) - 130 đánh giá
+                </div>
+                <p class="price">Giá tiền: 350.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="hanoi">
+            <div class="favorite-badge">
+                 ❤️
+            </div>
+            <img src="phòng 5.jpg" alt="Hình ảnh 2">
+            <div class="category-content">
+                <p>Chủ nhà: Phạm Chí Tuấn, kinh doanh ô tô</p>
+                <p>Địa điểm: Hà Nội</p>
+                <p>Ngày: 17/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.7) - 240 đánh giá
+                </div>
+                <p class="price">Giá tiền: 370.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="hue">
+            <div class="favorite-badge">
+                 ❤️
+            </div>
+            <img src="phòng6.jpg" alt="Hình ảnh 3">
+            <div class="category-content">
+                <p>Chủ nhà: Nguyễn Văn An, kinh doanh đồ gia dụng</p>
+                <p>Địa điểm: Huế</p>
+                <p>Ngày: 16/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.9) - 214 đánh giá
+                </div>
+                <p class="price">Giá tiền: 320.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="camau">
+            <div class="favorite-badge">
+                 ❤️
+            </div>
+            <img src="phòng7.jpg" alt="Hình ảnh 4">
+            <div class="category-content">
+                <p>Chủ nhà: Trương Văn Phúc, kinh doanh thời trang nam nữ</p>
+                <p>Địa điểm: Cà Mau</p>
+                <p>Ngày: 11/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.4) - 211 đánh giá
+                </div>
+                <p class="price">Giá tiền: 280.000 VND/1 ngày</p>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="category" id="binhduong">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng8.jpg" alt="Hình ảnh 5">
+            <div class="category-content">
+                <p>Chủ nhà: Nguyễn Thị Kim, kinh doanh đồ chơi trẻ em</p>
+                <p>Địa điểm: Bình Dương</p>
+                <p>Ngày: 14/1/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.5) - 176 đánh giá
+                </div>
+                <p class="price">Giá tiền: 350.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="kontum">
+            <div class="favorite-badge">
+                Được khách yêu thích ❤️
+            </div>
+            <img src="phòng9.jpg" alt="Hình ảnh 6">
+            <div class="category-content">
+                <p>Chủ nhà: Đỗ Văn Hải, kinh doanh nội thất</p>
+                <p>Địa điểm: Kon Tum</p>
+                <p>Ngày: 10/3/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐ (5) - 300 đánh giá
+                </div>
+                <p class="price">Giá tiền: 10.000.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="thaibinh">
+            <div class="favorite-badge">
+                 ❤️
+            </div>
+            <img src="phòng10.jpg" alt="Hình ảnh 7">
+            <div class="category-content">
+                <p>Chủ nhà: Vũ Văn Nam, kinh doanh đồ điện tử</p>
+                <p>Địa điểm: Thái Bình</p>
+                <p>Ngày: 27/2/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.5) - 146 đánh giá
+                </div>
+                <p class="price">Giá tiền: 265.000 VND/1 ngày</p>
+            </div>
+        </div>
+        <div class="category" id="quangnam">
+            <div class="favorite-badge">
+                 ❤️
+            </div>
+            <img src="phòng11.jpg" alt="Hình ảnh 8">
+            <div class="category-content">
+                <p>Chủ nhà: Hoàng Minh Châu, kinh doanh phụ kiện công nghệ</p>
+                <p>Địa điểm: Quảng Nam</p>
+                <p>Ngày: 29/2/2025</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐☆ (4.7) - 185 đánh giá
+                </div>
+                <p class="price">Giá tiền: 370.000 VND/1 ngày</p>
+            </div>
+        </div>
+    </div>
+    <section id="customer-feedback">
+        <h2>Phản hồi của khách hàng</h2>
+        <form id="feedback-form">
+            <label for="customer-name">Tên của bạn:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+
+            <label for="customer-feedback">Phản hồi:</label>
+            <textarea id="customer-feedback" name="customer-feedback" rows="4" required></textarea>
+
+            <button type="submit">Gửi phản hồi</button>
+        </form>
+
+        <div id="feedback-list">
+            <h3>Phản hồi đã nhận:</h3>
+            <ul>
+                <li><strong>Nguyễn Văn Tèo:</strong> Sản phẩm rất tốt!</li>
+                <li><strong>Trần Thị Trinh:</strong> Tôi rất hài lòng với chất lượng.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <img src="logo.png" alt="Logo công ty" width="50">
+                    <p>Airbnb Clone là nền tảng đặt phòng trực tuyến hàng đầu Việt Nam. Chúng tôi cung cấp ...</p>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                    </ul>
+                    <p><strong>Hotline:</strong> 1900 123 456</p>
+                    <p><strong>Email:</strong> info@airbnbclone.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+                    </ul>
+                    <div class="newsletter">
+                        <p>Đăng ký nhận tin khuyến mãi:</p>
+                        <input type="email" placeholder="Nhập email của bạn">
+                        <button>Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Airbnb Clone. Tất cả quyền được bảo lưu.</p>
+    </footer>
+    <div class="fb-comments" data-href="file:///D:/visua%20code/B%C3%A0i%20Lap/ASM1.html#" data-width="1200" data-numposts="5"></div>
+    <script src="https://uhchat.net/code.php?f=c1f0d9"></script>
+</body>
+</html>

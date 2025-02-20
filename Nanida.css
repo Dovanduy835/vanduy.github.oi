@@ -1,0 +1,649 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f7f7f7, #e3e3e3);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #ddd;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff385c;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px;
+    outline: none;
+    width: 150px;
+    border-right: 1px solid #ddd;
+}
+
+.search-bar input:last-child {
+    border-right: none;
+}
+
+.search-btn {
+    background-color: #ff385c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #e32b50;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.filters label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filters select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filters select:hover {
+    border-color: #ff385c;
+}
+
+.apply-filter-btn {
+    background-color: #ff385c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.apply-filter-btn:hover {
+    background-color: #e32b50;
+}
+
+.categories {
+    display: flex;
+    justify-content: center; /* Căn giữa các category */
+    flex-wrap: wrap;
+    gap: 40px; /* Tăng khoảng cách giữa các category */
+    padding: 40px; /* Tăng padding xung quanh các category */
+}
+
+.category {
+    text-align: center;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.category:hover img {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.favorite-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff385c;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+
+.favorite-badge::after {
+    content: "❤️";
+    font-size: 14px;
+}
+
+.category:hover .favorite-badge {
+    z-index: 20;
+    opacity: 1;
+}
+
+.category-content {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    transition: font-weight 0.3s ease, font-size 0.3s ease;
+}
+
+.category-content:hover {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff385c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.favorite-badge {
+color: #007AFF; 
+}
+.intro {
+text-align: center;
+padding: 40px;
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+color: white;
+font-size: 18px;
+}
+
+.rating {
+color: #ffcc00;
+font-weight: bold;
+margin-top: 5px;
+}
+
+.footer-container {
+display: flex;
+justify-content: space-around;
+padding: 20px;
+background-color: #f8f8f8;
+}
+
+.footer-section h3 {
+margin-bottom: 10px;
+color: #ff385c;
+}
+
+.footer-section ul {
+list-style: none;
+padding: 0;
+}
+
+.footer-section ul li a {
+text-decoration: none;
+color: #555;
+transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+color: #ff385c;
+}
+
+.social-icons i {
+margin-right: 8px;
+}
+/* Hiệu ứng hover cho nút tìm kiếm */
+.search-btn {
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+background-color: #e32b50;
+transform: scale(1.1);
+}
+
+/* Hiệu ứng focus cho ô tìm kiếm */
+.search-bar input:focus {
+border-color: #ff385c;
+box-shadow: 0 0 5px rgba(255, 56, 92, 0.5);
+}
+
+/* Cải thiện UI cho filter */
+.filters select {
+transition: all 0.3s, transform 0.2s;
+}
+
+.filters select:hover,
+.filters select:focus {
+border-color: #ff385c;
+transform: scale(1.05);
+}
+
+/* Nút áp dụng bộ lọc với hiệu ứng hover */
+.apply-filter-btn {
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.apply-filter-btn:hover {
+background-color: #e32b50;
+transform: scale(1.05);
+}
+
+/* Hiệu ứng hover cho các danh mục */
+.category {
+transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.category:hover {
+background: rgba(255, 255, 255, 0.95);
+transform: scale(1.07);
+}
+
+/* Hiệu ứng chữ khi hover vào nội dung danh mục */
+.category-content:hover {
+color: #ff385c;
+text-decoration: underline;
+}
+
+/* Điều chỉnh badge yêu thích */
+.favorite-badge {
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.category:hover .favorite-badge {
+transform: scale(1.1);
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+padding: 10px 20px;
+}
+
+.search-bar {
+width: 100%;
+justify-content: center;
+}
+
+.filters {
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+.categories {
+    gap: 30px; 
+    padding: 30px; 
+}
+
+.category {
+    width: 90%; 
+}
+}
+
+.footer-container {
+flex-direction: column;
+text-align: center;
+}
+/* Cải thiện header */
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 40px;
+background: rgba(255, 255, 255, 0.9);
+border-bottom: 1px solid #ddd;
+backdrop-filter: blur(12px);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Căn chỉnh logo */
+.logo {
+font-size: 26px;
+font-weight: bold;
+color: #ff385c;
+text-transform: capitalize;
+}
+
+/* Ô tìm kiếm nhỏ */
+.search-container {
+display: flex;
+align-items: center;
+background: white;
+padding: 6px 12px;
+border-radius: 50px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+border: 1px solid #ddd;
+transition: all 0.3s ease;
+}
+
+.search-input {
+border: none;
+outline: none;
+padding: 8px;
+font-size: 14px;
+width: 180px;
+transition: width 0.3s ease;
+}
+
+.search-container:hover .search-input {
+width: 220px;
+}
+
+/* Nút tìm kiếm */
+.search-btn {
+background-color: #ff385c;
+color: white;
+border: none;
+border-radius: 50%;
+padding: 8px 12px;
+cursor: pointer;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+background-color: #e32b50;
+transform: scale(1.1);
+}
+
+/* Thanh tìm kiếm lớn */
+.search-bar {
+display: flex;
+align-items: center;
+background: white;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+transition: all 0.3s ease;
+}
+
+.search-bar input {
+border: none;
+outline: none;
+padding: 10px;
+font-size: 14px;
+border-right: 1px solid #ddd;
+width: 140px;
+transition: width 0.3s ease;
+}
+
+.search-bar input:focus {
+width: 160px;
+border-color: #ff385c;
+}
+
+.search-bar input:last-child {
+border-right: none;
+}
+
+/* Hiệu ứng hover */
+.search-bar:hover {
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tuỳ chọn người dùng */
+.user-options {
+display: flex;
+align-items: center;
+gap: 15px;
+font-size: 14px;
+}
+
+.user-options span {
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.user-options span:hover {
+color: #ff385c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+padding: 10px 20px;
+}
+
+.search-bar {
+width: 100%;
+justify-content: center;
+}
+
+.search-container {
+width: 100%;
+justify-content: center;
+}
+
+.search-input {
+width: 100%;
+}
+
+.user-options {
+margin-top: 10px;
+}
+}
+.footer-container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    padding: 30px 50px; 
+    gap: 20px;
+    
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #333; 
+    margin-bottom: 12px;
+}
+.footer-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff385c;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    font-size: 20px; 
+    margin-right: 8px;
+}
+
+.social-icons i {
+    font-size: 20px; /* Tăng size icon */
+    color: #555;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons i:hover {
+    color: #ff385c;
+    transform: scale(1.1);
+}
+
+
+/* Tăng bo góc và bóng đổ */
+.search-bar, .filters {
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+/* Cải thiện ô nhập tìm kiếm */
+.search-bar input {
+    border-radius: 30px;
+    padding: 12px 15px;
+    width: 180px;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    width: 220px;
+    box-shadow: 0 0 8px rgba(255, 56, 92, 0.5);
+}
+
+/* Tăng kích thước icon tìm kiếm */
+.search-btn {
+    padding: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.1);
+    background-color: #e32b50;
+}
+
+/* Cải thiện bộ lọc */
+.filters {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 30px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Nút áp dụng filter */
+.apply-filter-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.apply-filter-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 56, 92, 0.3);
+}
+
+/* Căn giữa icon trong filter */
+.filters label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.search-container {
+    background-color: #F8F8F8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    color: #A0A0A0; /* Màu chữ gợi ý */
+}
+
+/* Bộ lọc tìm kiếm */
+.search-bar {
+    background-color: #F8F8F8;
+    border-radius: 5px; /* Góc bo tròn nhẹ */
+}
+
+.search-bar input {
+    border-right: 1px solid #ddd; /* Đường kẻ phân tách */
+}
+
+/* "Cho thuê chỗ ở qua Airbnb" */
+.user-options a {
+    color: #333;
+    text-decoration: none;
+}
+
+.user-options a:hover {
+    text-decoration: underline;
+}
+
+.user-options span,
+.menu-icon {
+    color: #333;
+}
